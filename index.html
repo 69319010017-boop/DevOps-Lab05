@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Car Jigsaw Puzzle</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Browser Game</p>
+          <h1>Car Jigsaw Puzzle</h1>
+        </div>
+        <div class="stats">
+          <div class="stat-box">
+            <span class="label">Moves</span>
+            <strong id="moves">0</strong>
+          </div>
+        </div>
+      </header>
+
+      <div class="controls">
+        <button id="shuffleBtn" type="button">Shuffle</button>
+        <button id="resetBtn" type="button" class="secondary">Reset</button>
+        <button id="musicToggleBtn" type="button" class="music-btn">Music: Off</button>
+        <button id="effectToggleBtn" type="button" class="effect-btn">Effect: On</button>
+      </div>
+
+      <div class="sound-controls">
+        <label class="volume-control" for="effectVolume">
+          <span>Effect Volume</span>
+          <input id="effectVolume" type="range" min="0" max="100" value="70" />
+          <strong id="effectVolumeValue">70%</strong>
+        </label>
+      </div>
+
+      <div class="music-controls">
+        <input
+          id="youtubeLinkInput"
+          type="url"
+          placeholder="Paste YouTube link here"
+          aria-label="YouTube music link"
+        />
+        <button id="applyMusicBtn" type="button" class="secondary">Apply Music</button>
+      </div>
+
+      <div id="status" class="status">Select a tile, then choose another tile to swap.</div>
+
+      <div id="musicFrameWrap" class="music-frame-wrap hidden" aria-live="polite">
+        <iframe
+          id="musicFrame"
+          src=""
+          title="Background music"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <section class="board-wrap">
+        <div id="board" class="board" aria-label="Jigsaw puzzle board"></div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
